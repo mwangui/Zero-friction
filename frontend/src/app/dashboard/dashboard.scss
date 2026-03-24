@@ -53,6 +53,21 @@
   color: var(--mat-sys-outline);
 }
 
+.state-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.state-error {
+  color: var(--pf-severity-critical);
+}
+
+.error-message {
+  font: var(--mat-sys-body-large);
+}
+
 @media (max-width: 1024px) {
   .kpi-grid {
     grid-template-columns: repeat(2, 1fr);

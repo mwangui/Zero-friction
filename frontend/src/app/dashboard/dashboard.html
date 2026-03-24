@@ -4,25 +4,35 @@
     <p class="dashboard-subtitle">Real-time infrastructure monitoring dashboard</p>
   </header>
 
-  <div class="kpi-grid">
-    @for (kpi of kpis; track kpi.title) {
-      <app-kpi-card
-        [title]="kpi.title"
-        [value]="kpi.value"
-        [unit]="kpi.unit ?? ''"
-        [trend]="kpi.trend"
-        [trendLabel]="kpi.trendLabel"
-        [icon]="kpi.icon"
-      />
-    }
-  </div>
+  @if (loading()) {
+    <div class="state-container">
+      <mat-spinner diameter="48" />
+    </div>
+  } @else if (error()) {
+    <div class="state-container state-error">
+      <span class="error-message">{{ error() }}</span>
+    </div>
+  } @else {
+    <div class="kpi-grid">
+      @for (kpi of kpis(); track kpi.title) {
+        <app-kpi-card
+          [title]="kpi.title"
+          [value]="kpi.value"
+          [unit]="kpi.unit ?? ''"
+          [trend]="kpi.trend"
+          [trendLabel]="kpi.trendLabel"
+          [icon]="kpi.icon"
+        />
+      }
+    </div>
 
-  <div class="chart-grid">
-    <app-chart-widget title="24h Traffic / Latency Trend" [options]="trafficChartOptions" />
-    <app-chart-widget title="Incident Severity by Region" [options]="incidentChartOptions" />
-  </div>
+    <div class="chart-grid">
+      <app-chart-widget title="24h Traffic / Latency Trend" [options]="trafficChartOptions()" />
+      <app-chart-widget title="Incident Severity by Region" [options]="incidentChartOptions()" />
+    </div>
 
-  <app-alert-list [alerts]="alerts" />
+    <app-alert-list [alerts]="alerts()" />
+  }
 
   <div id="ai-dropzone" class="ai-dropzone">
     <span class="dropzone-label">AI Widget Drop Zone</span>

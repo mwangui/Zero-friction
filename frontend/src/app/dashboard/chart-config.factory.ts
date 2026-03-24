@@ -1,5 +1,5 @@
 import type { EChartsOption } from 'echarts';
-import { TrafficDataPoint, IncidentRegionData } from '../core/mocks/charts.mock';
+import { TrafficDto, IncidentDto } from '../core/models/api.models';
 
 /**
  * Chart color palette aligned with Material 3 violet theme.
@@ -26,7 +26,7 @@ function baseGrid(): EChartsOption['grid'] {
   return { left: 48, right: 24, top: 40, bottom: 32, containLabel: true };
 }
 
-export function buildTrafficLatencyOption(data: TrafficDataPoint[]): EChartsOption {
+export function buildTrafficLatencyOption(data: TrafficDto[]): EChartsOption {
   const times = data.map((d) => d.time);
 
   return {
@@ -91,7 +91,7 @@ export function buildTrafficLatencyOption(data: TrafficDataPoint[]): EChartsOpti
   };
 }
 
-export function buildIncidentRegionOption(data: IncidentRegionData[]): EChartsOption {
+export function buildIncidentRegionOption(data: IncidentDto[]): EChartsOption {
   const regions = data.map((d) => d.region);
 
   return {

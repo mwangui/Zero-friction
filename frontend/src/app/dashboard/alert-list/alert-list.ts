@@ -2,7 +2,7 @@ import { Component, input } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { MatCard, MatCardContent } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
-import { AlertData } from '../../core/mocks/alerts.mock';
+import { AlertDto } from '../../core/models/api.models';
 
 @Component({
   selector: 'app-alert-list',
@@ -11,9 +11,9 @@ import { AlertData } from '../../core/mocks/alerts.mock';
   styleUrl: './alert-list.scss',
 })
 export class AlertList {
-  alerts = input.required<AlertData[]>();
+  alerts = input.required<AlertDto[]>();
 
-  protected severityIcon(severity: AlertData['severity']): string {
+  protected severityIcon(severity: AlertDto['severity']): string {
     const icons: Record<string, string> = {
       critical: 'error',
       warning: 'warning',
