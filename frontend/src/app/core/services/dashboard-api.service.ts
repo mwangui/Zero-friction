@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { KpiDto, TrafficDto, IncidentDto, AlertDto } from '../models/api.models';
+import { KpiDto, TrafficDto, IncidentDto, AlertDto, CpuLoadDto } from '../models/api.models';
 import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
@@ -23,5 +23,9 @@ export class DashboardApi {
 
   getAlerts(): Observable<AlertDto[]> {
     return this.http.get<AlertDto[]>(`${this.base}/alerts`);
+  }
+
+  getCpuLoad(): Observable<CpuLoadDto[]> {
+    return this.http.get<CpuLoadDto[]>(`${this.base}/cpuLoad`);
   }
 }

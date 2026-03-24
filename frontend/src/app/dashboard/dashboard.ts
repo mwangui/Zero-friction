@@ -4,8 +4,8 @@ import { KpiCard } from './kpi-card/kpi-card';
 import { ChartWidget } from './chart-widget/chart-widget';
 import { AlertList } from './alert-list/alert-list';
 import { DashboardApi } from '../core/services/dashboard-api.service';
-import { KpiDto, AlertDto, TrafficDto, IncidentDto } from '../core/models/api.models';
-import { buildTrafficLatencyOption, buildIncidentRegionOption } from './chart-config.factory';
+import { KpiDto, AlertDto, TrafficDto, IncidentDto, CpuLoadDto } from '../core/models/api.models';
+import { buildTrafficLatencyOption, buildIncidentRegionOption, buildCpuLoadOption } from './chart-config.factory';
 import type { EChartsOption } from 'echarts';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 
@@ -24,6 +24,7 @@ export class Dashboard implements OnInit {
   protected readonly alerts = signal<AlertDto[]>([]);
   protected readonly trafficChartOptions = signal<EChartsOption>({});
   protected readonly incidentChartOptions = signal<EChartsOption>({});
+  protected readonly cpuLoadChartOptions = signal<EChartsOption>({});
 
   ngOnInit(): void {
     forkJoin({
@@ -31,12 +32,14 @@ export class Dashboard implements OnInit {
       traffic: this.api.getTraffic(),
       incidents: this.api.getIncidents(),
       alerts: this.api.getAlerts(),
+      cpuLoad: this.api.getCpuLoad(),
     }).subscribe({
       next: (data) => {
         this.kpis.set(data.kpis);
         this.alerts.set(data.alerts);
         this.trafficChartOptions.set(buildTrafficLatencyOption(data.traffic));
         this.incidentChartOptions.set(buildIncidentRegionOption(data.incidents));
+        this.cpuLoadChartOptions.set(buildCpuLoadOption(data.cpuLoad));
         this.loading.set(false);
       },
       error: (err) => {

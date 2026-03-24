@@ -105,5 +105,11 @@
       "source": "AI Insights"
     }
   ],
-  "cpuLoad": []
+  "cpuLoad": [
+    { "device": "Server-A1", "load": 72 },
+    { "device": "Server-B2", "load": 85 },
+    { "device": "Router-C3", "load": 45 },
+    { "device": "Switch-D4", "load": 91 },
+    { "device": "Gateway-E5", "load": 63 }
+  ]
 }

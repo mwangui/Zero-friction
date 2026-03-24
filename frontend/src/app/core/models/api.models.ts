@@ -29,3 +29,8 @@ export interface AlertDto {
   message: string;
   source: string;
 }
+
+export interface CpuLoadDto {
+  device: string;
+  load: number;
+}
