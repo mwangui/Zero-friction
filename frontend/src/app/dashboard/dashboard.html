@@ -18,8 +18,8 @@
   </div>
 
   <div class="chart-grid">
-    <app-chart-placeholder title="Network Traffic (24h)" />
-    <app-chart-placeholder title="Incident Trend (7d)" />
+    <app-chart-widget title="24h Traffic / Latency Trend" [options]="trafficChartOptions" />
+    <app-chart-widget title="Incident Severity by Region" [options]="incidentChartOptions" />
   </div>
 
   <app-alert-list [alerts]="alerts" />
