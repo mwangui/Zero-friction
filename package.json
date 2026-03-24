@@ -1,0 +1,14 @@
+{
+  "name": "pulsefabric-monitor",
+  "version": "0.0.0",
+  "private": true,
+  "description": "PulseFabric Monitor — GitHub Codespaces + Copilot Demo",
+  "scripts": {
+    "start": "echo \"TODO: start frontend + backend\"",
+    "start:frontend": "echo \"TODO: ng serve\"",
+    "start:api": "echo \"TODO: json-server\"",
+    "build": "echo \"TODO: ng build\"",
+    "test": "echo \"TODO: ng test\"",
+    "lint": "echo \"TODO: ng lint\""
+  }
+}

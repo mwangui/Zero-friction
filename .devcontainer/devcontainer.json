@@ -1,0 +1,23 @@
+{
+  "name": "PulseFabric Monitor",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "forwardPorts": [4200, 3000],
+  "portsAttributes": {
+    "4200": { "label": "Angular Frontend", "onAutoForward": "notify" },
+    "3000": { "label": "JSON Server API", "onAutoForward": "notify" }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Angular.ng-template",
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  },
+  "postCreateCommand": "npm install -g @angular/cli && npm install"
+}
