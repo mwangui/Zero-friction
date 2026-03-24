@@ -19,19 +19,16 @@ This project rearchitects the B2B Design-to-Code workflow, eliminating complex l
 
 
 # Use cases for demo:
-Use this prompt during live demo. Copy and paste the sentence below into Copilot Chat:
-
+Use these prompts during the live demo. Copy and paste one prompt at a time into Copilot Chat. Do not paste all prompts at once. After each prompt, review the result first. Once the output looks correct, continue to the next use case.
 
 
 1. Add a KPI Card
-"Add a new KPI card called Active Sessions showing the number 14,200 with a trending up indicator. Put it next to the existing KPI cards. Follow all repo rules in copilot-instructions.md.
-
+Add a new KPI card called Active Sessions showing the number 14,200 with a trending up indicator. Put it next to the existing KPI cards. Follow all repo rules in copilot-instructions.md.
 
 
 2. Add a Chart to AI Drop Zone
-"Add a CPU Load by Device bar chart to the AI Widget Drop Zone at the bottom of the dashboard. Show 5 devices with fake CPU percentage data. Add the data to db.json first, then create the chart. Follow all repo rules in copilot-instructions.md.
-
+Add a CPU Load by Device bar chart to the AI Widget Drop Zone at the bottom of the dashboard. Show 5 devices with fake CPU percentage data. Add the data to db.json first, then create the chart. Follow all repo rules in copilot-instructions.md.
 
 
 3. Add a Brand New Widget
-"Add a new AI Security Recommendations widget to the dashboard. It should show 3 recommendations, each with a priority level (High, Medium, Low) and a short description. Add the data to db.json first, then build the component. Follow all repo rules in copilot-instructions.md.
+Add a new AI Security Recommendations widget to the dashboard. It should show 3 recommendations, each with a priority level (High, Medium, Low) and a short description. Add the data to db.json first, then build the component. Follow all repo rules in copilot-instructions.md.
