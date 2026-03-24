@@ -18,7 +18,7 @@ This project rearchitects the B2B Design-to-Code workflow, eliminating complex l
 5. Once the terminal is ready, you're good to go.
 
 
-Use cases AI prompts
+## Use cases AI prompts
 # Demo: Add a KPI Card
 
 Use this prompt during live demo. Copy and paste the sentence below into Copilot Chat:
