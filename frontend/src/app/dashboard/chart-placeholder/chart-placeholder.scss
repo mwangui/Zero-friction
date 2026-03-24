@@ -1,0 +1,37 @@
+:host {
+  display: block;
+}
+
+.chart-card {
+  height: 100%;
+  border-radius: var(--pf-radius-md);
+}
+
+.chart-title {
+  font: var(--mat-sys-title-medium);
+  color: var(--mat-sys-on-surface);
+  margin: 0 0 var(--pf-spacing-md);
+}
+
+.chart-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border: 2px dashed var(--mat-sys-outline-variant);
+  border-radius: var(--pf-radius-sm);
+  gap: var(--pf-spacing-sm);
+}
+
+.chart-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  color: var(--mat-sys-outline);
+}
+
+.chart-label {
+  font: var(--mat-sys-body-medium);
+  color: var(--mat-sys-on-surface-variant);
+}

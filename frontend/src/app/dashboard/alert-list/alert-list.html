@@ -1,0 +1,23 @@
+<mat-card class="alert-card" appearance="outlined">
+  <mat-card-content>
+    <h3 class="alert-title">Recent Alerts &amp; AI Insights</h3>
+    <ul class="alert-list">
+      @for (alert of alerts(); track alert.id) {
+        <li class="alert-item">
+          <mat-icon [class]="'severity-icon severity-' + alert.severity">
+            {{ severityIcon(alert.severity) }}
+          </mat-icon>
+          <div class="alert-body">
+            <span class="alert-message">{{ alert.message }}</span>
+            <span class="alert-meta">
+              {{ alert.source }} · {{ alert.timestamp | date: 'HH:mm' }}
+            </span>
+          </div>
+          <span [class]="'severity-badge severity-' + alert.severity">
+            {{ alert.severity }}
+          </span>
+        </li>
+      }
+    </ul>
+  </mat-card-content>
+</mat-card>

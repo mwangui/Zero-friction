@@ -1,0 +1,63 @@
+:host {
+  display: block;
+}
+
+.kpi-card {
+  height: 100%;
+  border-radius: var(--pf-radius-md);
+}
+
+.kpi-header {
+  display: flex;
+  align-items: center;
+  gap: var(--pf-spacing-sm);
+  margin-bottom: var(--pf-spacing-md);
+}
+
+.kpi-icon {
+  color: var(--mat-sys-primary);
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.kpi-title {
+  font: var(--mat-sys-title-small);
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.kpi-value {
+  font: var(--mat-sys-display-small);
+  color: var(--mat-sys-on-surface);
+  margin-bottom: var(--pf-spacing-sm);
+}
+
+.kpi-unit {
+  font: var(--mat-sys-title-medium);
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.kpi-trend {
+  display: flex;
+  align-items: center;
+  gap: var(--pf-spacing-xs);
+  font: var(--mat-sys-label-medium);
+}
+
+.trend-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.trend-up {
+  color: #2e7d32;
+}
+
+.trend-down {
+  color: var(--pf-severity-critical);
+}
+
+.trend-stable {
+  color: var(--mat-sys-on-surface-variant);
+}

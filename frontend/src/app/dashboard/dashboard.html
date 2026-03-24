@@ -1,0 +1,30 @@
+<section class="dashboard">
+  <header class="dashboard-header">
+    <h1 class="dashboard-title">PulseFabric Monitor</h1>
+    <p class="dashboard-subtitle">Real-time infrastructure monitoring dashboard</p>
+  </header>
+
+  <div class="kpi-grid">
+    @for (kpi of kpis; track kpi.title) {
+      <app-kpi-card
+        [title]="kpi.title"
+        [value]="kpi.value"
+        [unit]="kpi.unit ?? ''"
+        [trend]="kpi.trend"
+        [trendLabel]="kpi.trendLabel"
+        [icon]="kpi.icon"
+      />
+    }
+  </div>
+
+  <div class="chart-grid">
+    <app-chart-placeholder title="Network Traffic (24h)" />
+    <app-chart-placeholder title="Incident Trend (7d)" />
+  </div>
+
+  <app-alert-list [alerts]="alerts" />
+
+  <div id="ai-dropzone" class="ai-dropzone">
+    <span class="dropzone-label">AI Widget Drop Zone</span>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+:root {
+  // Spacing
+  --pf-spacing-xs: 4px;
+  --pf-spacing-sm: 8px;
+  --pf-spacing-md: 16px;
+  --pf-spacing-lg: 24px;
+  --pf-spacing-xl: 32px;
+  --pf-spacing-2xl: 48px;
+
+  // Border radius
+  --pf-radius-sm: 8px;
+  --pf-radius-md: 12px;
+  --pf-radius-lg: 16px;
+
+  // Shadows
+  --pf-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --pf-shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  // Layout
+  --pf-content-max-width: 1400px;
+  --pf-header-height: 64px;
+
+  // Severity colors
+  --pf-severity-critical: #d32f2f;
+  --pf-severity-warning: #ed6c02;
+  --pf-severity-info: #0288d1;
+}
