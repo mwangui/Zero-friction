@@ -18,7 +18,11 @@ This project rearchitects the B2B Design-to-Code workflow, eliminating complex l
 5. Once the terminal is ready, you're good to go.
 
 
-# Use cases - Use this prompt during live demo. Copy and paste the sentence below into Copilot Chat:
+# Use cases - 
+Use this prompt during live demo. Copy and paste the sentence below into Copilot Chat:
+
+---
+
 1. Demo: Add a KPI Card
 "Add a new KPI card called Active Sessions showing the number 14,200 with a trending up indicator. Put it next to the existing KPI cards. Follow all repo rules in copilot-instructions.md."
 
