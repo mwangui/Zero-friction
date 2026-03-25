@@ -33,6 +33,14 @@
       "trend": "up",
       "trendLabel": "+0.03% this week",
       "icon": "cloud_done"
+    },
+    {
+      "id": "active-sessions",
+      "title": "Active Sessions",
+      "value": "14200",
+      "trend": "up",
+      "trendLabel": "+2,300 from last hour",
+      "icon": "group"
     }
   ],
   "traffic": [
