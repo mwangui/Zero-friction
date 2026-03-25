@@ -1,6 +1,10 @@
 {
   "name": "PulseFabric Monitor",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb"
+  },
   "forwardPorts": [4200, 3000],
   "portsAttributes": {
     "4200": { "label": "Angular Frontend", "onAutoForward": "notify" },
@@ -19,5 +23,6 @@
       }
     }
   },
-  "postCreateCommand": "npm install -g @angular/cli && npm install"
+  "postCreateCommand": "npm install -g @angular/cli",
+  "updateContentCommand": "npm ci --prefer-offline --no-audit"
 }
