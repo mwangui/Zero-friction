@@ -25,23 +25,6 @@
       "trendLabel": "No change",
       "icon": "shield"
     },
-    {
-      "id": "site-availability",
-      "title": "Site Availability",
-      "value": "99.97",
-      "unit": "%",
-      "trend": "up",
-      "trendLabel": "+0.03% this week",
-      "icon": "cloud_done"
-    },
-    {
-      "id": "active-sessions",
-      "title": "Active Sessions",
-      "value": "14,200",
-      "trend": "up",
-      "trendLabel": "+800 from last hour",
-      "icon": "group"
-    }
   ],
   "traffic": [
     { "time": "00:00", "inbound": 120, "outbound": 95, "latency": 12 },
