@@ -6,6 +6,12 @@
     "4200": { "label": "Angular Frontend", "onAutoForward": "notify" },
     "3000": { "label": "JSON Server API", "onAutoForward": "notify" }
   },
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb"
+  },
+  "updateContentCommand": "npm install -g @angular/cli && cd frontend && npm ci --prefer-offline --no-audit && cd ../backend && npm ci --prefer-offline --no-audit || true",
+  "postStartCommand": "cd /workspaces/Zero-friction && npm run dev &",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -18,6 +24,5 @@
         "terminal.integrated.defaultProfile.linux": "zsh"
       }
     }
-  },
-  "postCreateCommand": "npm install -g @angular/cli && npm install"
+  }
 }
