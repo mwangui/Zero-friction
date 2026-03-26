@@ -1,7 +1,7 @@
-# PulseFabric Monitor
+# Network Operations Monitoring Dashboard
 
-> Enterprise infrastructure monitoring dashboard — GitHub Codespaces + Copilot Demo
-
+> Demo built with fake data in an existing production-style codebase to show how new monitoring features can be added quickly using GitHub Codespaces and Copilot.
+> 
 **Authors:** Mingchieh Wang, Wei Tien Pang, Yufei Mclaughlin
 **Date:** March 23, 2026
 
