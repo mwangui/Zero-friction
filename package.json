@@ -6,7 +6,7 @@
   "scripts": {
     "dev:web": "cd frontend && npx ng serve",
     "build:web": "cd frontend && npx ng build",
-    "dev:api": "npx json-server backend/db.json --port 3000",
+    "dev:api": "uvicorn backend.main:app --port 3000 --reload",
     "dev": "npx concurrently -n api,web -c blue,green \"npm run dev:api\" \"npm run dev:web\"",
     "validate": "cd frontend && npx ng build && npx ng lint"
   },
