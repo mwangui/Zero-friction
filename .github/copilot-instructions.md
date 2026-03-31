@@ -15,6 +15,16 @@
 - API data must have a typed interface in `core/models/api.models.ts`.
 - API URLs must use `environment`, never hardcode URLs in services.
 
+## Dev Server Rules
+
+- Never run `npm install`, `pip install`, or any dependency installation commands. Assume all packages are pre-installed.
+- After making code edits, start the app with `npm run dev`.
+- Never run `ng build` or any build validation unless explicitly asked.
+- Exception: If a new package is genuinely required for the feature to work, STOP and ask the user before installing. Do not install silently.
+- Exception: If `npm run dev` fails due to a missing module error, ask the user before running any install commands.
+- Never restart the dev server unless the user asks or the server is confirmed to be down.
+- After `npm run dev` is running, always report the forwarded preview URL from the Ports panel so the user can preview the result in the browser.
+
 ## When Unsure
 
 - If you are not sure whether a value should be a token, ASK the user before writing raw values.
