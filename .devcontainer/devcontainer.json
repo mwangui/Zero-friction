@@ -19,12 +19,16 @@
         "Angular.ng-template",
         "GitHub.copilot",
         "GitHub.copilot-chat",
-        "dbaeumer.vscode-eslint"
+        "dbaeumer.vscode-eslint",
+        "ms-python.python",
+        "ms-python.vscode-pylance"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "zsh",
         "git.branchProtection": ["main"],
-        "git.branchProtectionPrompt": "alwaysCommitToNewBranch"
+        "git.branchProtectionPrompt": "alwaysCommitToNewBranch",
+        "python.defaultInterpreterPath": "/usr/local/bin/python3",
+        "python.languageServer": "Pylance"
       }
     }
   }

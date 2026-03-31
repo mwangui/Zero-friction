@@ -30,14 +30,14 @@ The dashboard displays real-time KPI cards, traffic/incident charts, and alert f
 1. Click the green **Code** button on the repository page.
 2. Select the **Codespaces** tab.
 3. Click **Create codespace on main**.
-4. Wait for the container to build — Node.js 20, Angular CLI, and all VS Code extensions install automatically.
+4. Wait for the container to build — the devcontainer uses `mcr.microsoft.com/devcontainers/universal:2` which includes Node.js 20 and Python 3.11. Angular CLI 21, FastAPI, and Uvicorn are installed automatically during setup.
 5. Run the dev servers:
 
 ```bash
 npm run dev
 ```
 
-6. The Angular app opens at **port 4200** and the API runs at **port 3000**.
+6. The Angular app opens at **port 4200** and the FastAPI backend runs at **port 3000**.
 
 ### Option B: Local Development
 
@@ -46,11 +46,14 @@ npm run dev
 git clone https://github.com/mwangui/Zero-friction.git
 cd Zero-friction
 
-# Install root dependencies (concurrently, json-server)
+# Install root dependencies (concurrently)
 npm install
 
 # Install frontend dependencies
 cd frontend && npm install && cd ..
+
+# Install backend dependencies
+pip install fastapi uvicorn[standard]
 
 # Start both servers
 npm run dev
@@ -59,17 +62,17 @@ npm run dev
 | URL | Service |
 |-----|---------|
 | `http://localhost:4200` | Angular dashboard |
-| `http://localhost:3000` | json-server API |
+| `http://localhost:3000` | FastAPI backend |
 
-The Angular dev server proxies `/api/*` requests to json-server automatically.
+The Angular dev server proxies `/api/*` requests to the FastAPI backend automatically.
 
 ### Available Scripts
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Start both Angular + json-server concurrently |
+| `npm run dev` | Start both Angular + FastAPI concurrently |
 | `npm run dev:web` | Start Angular dev server only |
-| `npm run dev:api` | Start json-server only |
+| `npm run dev:api` | Start FastAPI with Uvicorn (port 3000, hot-reload) |
 | `npm run build:web` | Production build |
 | `npm run validate` | Build + lint |
 
@@ -102,8 +105,8 @@ Open Copilot Chat and paste:
 | Layer | Technology |
 |-------|-----------|
 | Frontend | Angular 21, Angular Material (Material 3), ngx-echarts |
-| Backend | json-server (fake REST API from `backend/db.json`) |
-| Dev Environment | GitHub Codespaces, Dev Containers (Node.js 20) |
+| Backend | FastAPI + Uvicorn (serves REST API from `backend/db.json`) |
+| Dev Environment | GitHub Codespaces, Dev Containers (`universal:2` — Node.js 20, Python 3.11) |
 | AI Governance | copilot-instructions.md, prompt files, agent profiles |
 
 ---
