@@ -10,7 +10,7 @@
     "cpus": 8,
     "memory": "16gb"
   },
-  "updateContentCommand": "pip install fastapi uvicorn[standard] && npm install && npm install -g @angular/cli@21 && cd frontend && npm ci --prefer-offline --no-audit",
+  "updateContentCommand": "pip install fastapi uvicorn[standard] && npm install && npm install -g @angular/cli@21 && cd frontend && npm ci --prefer-offline --no-audit && cd .. && echo 'deps ready'",
   "postCreateCommand": "git checkout -b feat/$(echo $GITHUB_USER)-$(date +%Y%m%d-%H%M%S) 2>/dev/null || true",
   "postStartCommand": "cd /workspaces/Zero-friction && git pull origin main || true",
   "remoteEnv": {
