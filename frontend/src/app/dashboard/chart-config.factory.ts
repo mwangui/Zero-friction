@@ -1,5 +1,5 @@
 import type { EChartsOption } from 'echarts';
-import { TrafficDto, IncidentDto } from '../core/models/api.models';
+import { TrafficDto, IncidentDto, CpuLoadDto } from '../core/models/api.models';
 
 /**
  * Chart color palette aligned with Material 3 violet theme.
@@ -134,6 +134,47 @@ export function buildIncidentRegionOption(data: IncidentDto[]): EChartsOption {
         data: data.map((d) => d.info),
         itemStyle: { color: PALETTE.info, borderRadius: [4, 4, 0, 0] },
         barWidth: '50%',
+      },
+    ],
+  };
+}
+
+export function buildCpuLoadByDeviceOption(data: CpuLoadDto[]): EChartsOption {
+  const devices = data.map((d) => d.device);
+
+  return {
+    textStyle: BASE_TEXT_STYLE,
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: { type: 'shadow' },
+      valueFormatter: (value) => `${value}%`,
+    },
+    grid: baseGrid(),
+    xAxis: {
+      type: 'category',
+      data: devices,
+      axisLine: { lineStyle: { color: PALETTE.outline } },
+      axisLabel: { fontSize: 11, rotate: 16 },
+    },
+    yAxis: {
+      type: 'value',
+      min: 0,
+      max: 100,
+      name: 'CPU %',
+      nameTextStyle: { fontSize: 11 },
+      axisLine: { show: false },
+      splitLine: { lineStyle: { color: PALETTE.surface } },
+    },
+    series: [
+      {
+        name: 'CPU Load',
+        type: 'bar',
+        data: data.map((d) => d.cpu),
+        barWidth: '55%',
+        itemStyle: {
+          color: PALETTE.tertiary,
+          borderRadius: [4, 4, 0, 0],
+        },
       },
     ],
   };

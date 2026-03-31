@@ -49,6 +49,11 @@ class AlertDto(BaseModel):
     source: str
 
 
+class CpuLoadDto(BaseModel):
+    device: str
+    cpu: int
+
+
 # ---------------------------------------------------------------------------
 # Load data from db.json at startup
 # ---------------------------------------------------------------------------
@@ -103,3 +108,9 @@ def get_incidents() -> list[dict]:
 def get_alerts() -> list[dict]:
     """Return recent alert feed."""
     return _DB["alerts"]
+
+
+@app.get("/cpu-load", response_model=list[CpuLoadDto])
+def get_cpu_load() -> list[dict]:
+    """Return CPU load percentages by device."""
+    return _DB["cpuLoad"]

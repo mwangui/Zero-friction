@@ -33,6 +33,14 @@
       "trend": "up",
       "trendLabel": "+0.03% this week",
       "icon": "cloud_done"
+    },
+    {
+      "id": "active-sessions",
+      "title": "Active Sessions",
+      "value": "14,200",
+      "trend": "up",
+      "trendLabel": "+6.2% from last hour",
+      "icon": "groups"
     }
   ],
   "traffic": [
@@ -105,5 +113,11 @@
       "source": "AI Insights"
     }
   ],
-  "cpuLoad": []
+  "cpuLoad": [
+    { "device": "Edge-RTR-01", "cpu": 78 },
+    { "device": "Core-SW-03", "cpu": 64 },
+    { "device": "FW-GW-02", "cpu": 86 },
+    { "device": "VPN-HUB-01", "cpu": 58 },
+    { "device": "LB-POOL-04", "cpu": 72 }
+  ]
 }
