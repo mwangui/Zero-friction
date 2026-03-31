@@ -1,18 +1,18 @@
 {
   "name": "PulseFabric Monitor",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
   "forwardPorts": [4200, 3000],
   "portsAttributes": {
     "4200": { "label": "Angular Frontend", "onAutoForward": "notify" },
-    "3000": { "label": "JSON Server API", "onAutoForward": "notify" }
+    "3000": { "label": "Backend API", "onAutoForward": "notify" }
   },
   "hostRequirements": {
     "cpus": 8,
     "memory": "16gb"
   },
-  "updateContentCommand": "npm install -g @angular/cli && cd frontend && npm ci --prefer-offline --no-audit && cd ../backend && npm ci --prefer-offline --no-audit || true",
-  "postCreateCommand": "git checkout -b feat/$(echo $GITHUB_USER)-$(date +%Y%m%d-%H%M%S)",
-  "postStartCommand": "cd /workspaces/Zero-friction && git pull origin main && cd frontend && npm ci --prefer-offline --no-audit && cd ../backend && npm ci --prefer-offline --no-audit || true",
+  "updateContentCommand": "pip install fastapi uvicorn[standard] && npm install -g @angular/cli@21 && cd frontend && npm ci --prefer-offline --no-audit",
+  "postCreateCommand": "git checkout -b feat/$(echo $GITHUB_USER)-$(date +%Y%m%d-%H%M%S) 2>/dev/null || true",
+  "postStartCommand": "cd /workspaces/Zero-friction && git pull origin main || true",
   "customizations": {
     "vscode": {
       "extensions": [
